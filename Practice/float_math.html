@@ -19,44 +19,83 @@
             alert('Hello JS');
             //運算子 是泛指一切的運算
             // 賦值運算子 += -= *= /=
-            var x =parseInt(prompt("請輸入數值x",0)) //parseInt：設定為整數 //parsefloat：設定為符點數 //prompt：輸入
-            var y = parseInt(prompt("請輸入數值y",0)) 
-            var math = prompt("請輸入運算子")
-            var plus_or_minus = prompt("請輸入意欲要+1或是-1(如果沒有輸入0)")
-            var result
+          
+            
+          
+            
+            
 
-            function pom(){
-                if (plus_or_minus==="+1"){
-                    result ++; //+1
-                }
-                else if (plus_or_minus === "-1"){
-                    result --; //-1
-                } 
-                else{
-                    result +=0; //變數+0的意思
-                }
-            } /*function 函式名稱(){
-                程式碼
-            }*/
+            var result, x, y; // 将 x 和 y 定义在全局范围内
 
-            function countfunction(count){
-                if (math==='+'){
-                    result = x+y;
-                } else if(math === '-'){
-                    result = x-y;
-                } else if (math === '*'){
-                    result = x*y;
-                } else if(math === '/'){
-                    result = x/y;
-                } else if(math === '%'){
-                    result = x%y;
-                } else if(math === '**'){
+            function num() {
+                x = Number(prompt("請輸入數值x", 0)); // Number: 設定為數值, prompt: 輸入
+                y = Number(prompt("請輸入數值y", 0));
+                while (true) {
+                    // 如果 x 或 y 不是数字，则重新提示用户输入
+                    if (isNaN(x) || isNaN(y)) {
+                        alert("輸入的不是數字，請重新輸入");
+                        x = Number(prompt("請輸入數值x", 0));
+                        y = Number(prompt("請輸入數值y", 0));
+                    } else {
+                        break; // 结束循环
+                    }
+                }
+            }
+            
+            function operation() {
+                var op;
+                while (true) {
+                    op = prompt("請輸入運算子");
+                    if (op === '+' || op === '-' || op === '*' || op === '/' || op === '%' || op === '**') {
+                        break;
+                    } else {
+                        alert("不合法的運算子，請重新輸入");
+                    }
+                }
+                if (op === '+') {
+                    result = x + y;
+                } else if (op === '-') {
+                    result = x - y;
+                } else if (op === '*') {
+                    result = x * y;
+                } else if (op === '/') {
+                    result = x / y;
+                } else if (op === '%') {
+                    result = x % y;
+                } else if (op === '**') {
                     result = x**y;
                 }
-                pom()
-                alert(result) //顯示在視窗
             }
-            countfunction()
+            
+            function pom() {
+                var plus_or_minus;
+                while (true) {
+                    plus_or_minus = prompt("請輸入意欲要+1或是-1(如果沒有輸入0)");
+                    if (plus_or_minus === "+1") {
+                        result++; //+1
+                        break; // 结束循环
+                    } else if (plus_or_minus === "-1") {
+                        result--; //-1
+                        break; // 结束循环
+                    } else if (plus_or_minus === "0") {
+                        result += 0; //变数+0的意思
+                        break; // 结束循环
+                    } else {
+                        alert('請重新輸入');
+                    }
+                }
+            }
+            
+            function main() {
+                num();
+                operation();
+                pom();
+                alert(result); //顯示在視窗
+            }
+            
+            main();
+            
+
 
             //比較運算子：  > < ===(比較嚴格的) ==(比較寬鬆的) !=不相等  >= <= 
             //比較運算子印出true或是false
@@ -65,6 +104,13 @@
             alert(5===5); // true === 非常嚴格
             alert(5==='5'); // false 
             alert(5=="5"); //true ==沒有那麼嚴格
+
+            //邏輯運算符 &&(and) ||(or) !(非)
+            var num1 =5
+            var num2 = 2
+            alert(num1 === num2 && true) //false && true >> false
+            alert(num1 === num2 || true) //false||true >> true
+            alert(!(num1 === num2)&& true) //(!false)>>true&&true>>true
 
             //輸入輸出
             //輸入：使用prompt prompt('提示語句',預設值(預設值可以是字串或是數值))
