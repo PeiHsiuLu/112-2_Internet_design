@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset = "UTF-8">
+        <title>float_math Practice </title>
+        <script>
+            //會出現在主控板上// ctrl+shift+j
+            //單行註解
+            /*
+            多行註解
+            */
+            //資料
+            15,15.55; //數字
+            '這是字串';//字串
+            true,false;//布林值
+            //變數 利用var宣告變數
+            var x;
+            x=15;
+            alert('Hello JS');
+            //運算子 是泛指一切的運算
+            // 賦值運算子 += -= *= /=
+            var x =parseInt(prompt("請輸入數值x",0)) //parseInt：設定為整數 //parsefloat：設定為符點數 //prompt：輸入
+            var y = parseInt(prompt("請輸入數值y",0)) 
+            var math = prompt("請輸入運算子")
+            var plus_or_minus = prompt("請輸入意欲要+1或是-1(如果沒有輸入0)")
+            var result
+
+            function pom(){
+                if (plus_or_minus==="+1"){
+                    result ++; //+1
+                }
+                else if (plus_or_minus === "-1"){
+                    result --; //-1
+                } 
+                else{
+                    result +=0; //變數+0的意思
+                }
+            } /*function 函式名稱(){
+                程式碼
+            }*/
+
+            function countfunction(count){
+                if (math==='+'){
+                    result = x+y;
+                } else if(math === '-'){
+                    result = x-y;
+                } else if (math === '*'){
+                    result = x*y;
+                } else if(math === '/'){
+                    result = x/y;
+                } else if(math === '%'){
+                    result = x%y;
+                } else if(math === '**'){
+                    result = x**y;
+                }
+                pom()
+                alert(result) //顯示在視窗
+            }
+            countfunction()
+
+            //比較運算子：  > < ===(比較嚴格的) ==(比較寬鬆的) !=不相等  >= <= 
+            //比較運算子印出true或是false
+            alert(5>2); //true
+            alert(5<2);//false
+            alert(5===5); // true === 非常嚴格
+            alert(5==='5'); // false 
+            alert(5=="5"); //true ==沒有那麼嚴格
+
+            //輸入輸出
+            //輸入：使用prompt prompt('提示語句',預設值(預設值可以是字串或是數值))
+            var name=prompt('請輸入姓名',"修哥");
+            //輸出
+            alert(`哈囉！${name}`) //在視窗彈出
+            
+        </script>
+    </head>
+    <body>
+        
+    </body>
+</html>
