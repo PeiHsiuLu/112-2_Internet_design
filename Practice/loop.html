@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 流程控制 - 迴圈</title>
+        <meta charset="utf-8">
+        <script>
+            /*while(判斷){
+                1. 若判斷的結果是正確的true，則執行大括號內區塊的內容
+                2. 程式碼執行完畢，回到上方while的位置，做第二次判斷
+                3. 直到判斷結果是false的，才跳離整個迴圈結構
+
+            }*/
+            var n=0;
+            var sum=0;
+            while(n<=1000){
+                sum+=n
+                n++
+            }
+            alert(sum)
+
+            /* for(初始區塊；判斷；迴圈區塊){
+                判斷概念同while迴圈。
+                請在講解中，注意「初始區塊」與「迴圈區塊」的使用時機
+            }
+
+            */
+            var sum_2=0
+            for(var i =0 ; i<=100;i++){
+                sum_2+=i
+            }
+            alert(sum_2)
+
+            /*這個題目要求你使用for迴圈將1到10的所有整數輸出到控制台。
+            你只需要使用一個for迴圈，從1開始遞增到10，
+            然後在迴圈內使用console.log()函數將每個數字輸出到控制台。*/
+            for(var x=1;x<11;x++){
+                console.log(x)
+            }
+
+            /*break; continue*/
+            var sum_3=0
+            for(var y=1;y<101;y++){
+                if(y>50){
+                    break;
+                }
+                else{
+                    sum_3+=y;
+                    console.log(`總和：${sum_3}`);
+                }
+                
+            }
+            var w=0;
+
+            for(var z=0;z<100;z++){
+                if (z%5 === 1){
+                    continue;
+                }
+                w++;
+            }
+            alert(w)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
