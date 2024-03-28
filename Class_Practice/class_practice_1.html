@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Practice</title>
+        <meta charset = "utf-8">
+        <script>
+            // 隨機生成問題
+            function asking_question() {
+                var n = 0;
+                var question = ["How are you?"];
+                var asking_text = ""; // 將 asking_text 初始化為一個空字符串
+
+                while (asking_text !== '0') {
+                    asking_text = prompt("請輸入您要詢問的問題(輸入0代表結束輸入問題)");
+                    if (asking_text === '0') {
+                        break;
+                    } else {
+                        question.push(asking_text);
+                        n++;
+                    }
+                }
+                return question; // 返回問題陣列
+            }
+
+            // 可生成問題列表
+            function question_list() {
+                var ask = asking_question();
+                alert("可問的問題如下：" + ask);
+                return ask; // 返回問題陣列
+            }
+
+            // 隨機生成回覆
+            function text_content(max) {
+                max = Math.floor(Math.random() * 10) + 1;
+                alert("可生成的回覆上限：" + max + "次");
+                var content = ["I'm fine."];
+                for (var n = 0; n < max; n++) {
+                    var text = prompt("請輸入您要輸入的文字內容(輸入0代表結束回覆輸入)");
+                    if (text === "0") {
+                        break;
+                    }
+                    content.push(text);
+                }
+                return content;
+            }
+
+            // 可生成回覆列表
+            function reply_list() {
+                var replies = text_content();
+                alert("可回覆的回應如下：" + replies);
+                return replies; // 返回回覆陣列
+            }
+
+            // 主程式
+            function main() {
+                var questions = question_list();
+                var replies = reply_list();
+
+                // 隨機選擇問題和回覆
+                var randomQuestion = questions[Math.floor(Math.random() * questions.length)];
+                var randomReply = replies[Math.floor(Math.random() * replies.length)];
+
+                // 顯示隨機問題和回覆
+                alert(randomQuestion);
+                alert(randomReply);
+            }
+
+            // 運作的主程式
+            main();
+
+
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

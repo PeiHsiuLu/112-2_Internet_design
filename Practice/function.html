@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript 函式 - 基礎使用</title>
+        <meta charset="utf-8">
+        <script>
+            /* function 函式名稱(){} */
+            function test(msg){
+                //函式的本體
+                alert(msg);
+            }
+            //呼叫/使用階段
+            test("Hello World");
+            test("Hello Javascript!")
+            function getSum(max){
+                var sum = 0
+                for (var x=0;x<max;x++ /*x++是最後才執行*/){
+                    sum+=x;
+                }
+                return sum;
+            }
+            result=getSum(2)*100
+            alert(result)
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>
